@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Images/522169.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="crt">
+        <div id="header">
+            <h1>Etch-A-Sketch</h1>
+        </div>
+
+        <div id="content">
+            <div id="menu">
+                <h3>Color picker</h3>
+                <span id="colorInput"></span>
+                <input type='color' value='#fefefe' class='bar' id='color'>
+
+                <h3 id="rainbow"><span id="textColor">Rainbow mode</span></h3>
+                <h3 class="menuOption" id="black">Black mode</h3>
+                <h3 class="menuOption" id="eraser">Eraser</h3>
+                <h3 class="menuOption" id="clear">Clear</h3>
+
+                <span id="sliderValue">16 x 16</span>
+                <input type="range" min="8" max="64" value="16" step="8" id="sliderInput">
+            </div>
+
+            <div id="gridCrt">
+
+            </div>
+        </div>
+
+        <div id="footer">
+            <p>Copyright &#169;
+                <script>document.write(new Date().getFullYear())</script> Matthew Ward
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        //Gets the color chosen and changes the pickers color to represent change.
+        $("#color").change(function (event) {
+            console.log($(this).val());
+            $("#colorInput").css('background-color', $(this).val());
+        });
+
+        $("#colorInput").click(function (event) {
+            $("#color").click();
+        });</script>
+</body>
+
+</html>
